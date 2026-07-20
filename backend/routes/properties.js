@@ -37,7 +37,7 @@ router.get('/:id/openhouses', async(req, res) => {
     }
 
     const [openhouses] = await pool.query(
-      'SELECT * FROM rets_openhouse WHERE L_ListingID = ? ORDER BY OpenHouseDate, OpenHouseStartTime',
+      'SELECT * FROM rets_openhouse WHERE L_ListingID = ? ORDER BY OH_StartDate and OH_StartTime',
       [id]
     );
 
@@ -203,4 +203,4 @@ router.get("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = router;cmd
